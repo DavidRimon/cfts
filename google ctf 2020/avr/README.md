@@ -690,4 +690,4 @@ Choice:
 
 Hopped you liked this writeup!
 
-If you have any suggestions, let me know!
+If you have any suggestions/fixes, let me know!
