@@ -1,4 +1,5 @@
-# Google CTF 2020 AVR writeup ![AVR Freaks](images/Atmel_Freaks_logo_large.png)
+# Google CTF 2020 AVR writeup
+![AVR Freaks](images/Atmel_Freaks_logo_large.png)
 
 ## Part 1
 
