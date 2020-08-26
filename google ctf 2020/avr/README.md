@@ -1,4 +1,4 @@
-# Google CTF 2020 AVR writeup
+# Google CTF 2020 AVR writeup ![AVR Freaks](images\Atmel_Freaks_logo_large.png)
 
 ## Part 1
 
@@ -215,7 +215,7 @@ http://maxembedded.com/2011/06/introduction-to-avr-timers/
 
 If we are not logged in to the system (we will soon see how we do), then the `overflow_count` will increase, until it passed a certain limit (representing about 10 seconds), and will quit the program.
 
-we will take about the `else ` clause later on.
+we will talk about the `else ` clause later on.
 
 lets stat with the `main` function. This is the first half.
 
@@ -265,7 +265,7 @@ Then the  `TCCR1A` and `TIMSK1` registers are set to enable the timer.
 
 We are greeted with a message, and the timer starts.
 
-As you can see, we need the right password in order to pass the loop and `logged_in = 1` and proceed to the next state. 
+As you can see, we need the right password in order to pass the loop and proceed to the next state. 
 
 If we don't enter the right password for about 10 seconds, until `timer_on_off(0)` is run,  we will get a timeout and exit the program.
 
@@ -300,7 +300,7 @@ So if you can measure how much time did it take for the function to end, you can
 
 We can measure this thanks for a few reasons.
 
-First, the developers are printing the current time on every loop iteration - and this time is measure locally on the processor, so you don't need to measure it your self, across time-unreliable global network. Time measurement here is very delicate, because the timing attack here relies on measuring a single `strcmp` iteration, which is just running a few extra machines opcodes:
+First, the developers are printing the current time on every loop iteration - and this time is measured locally on the processor, so you don't need to measure it your self, across time-unreliable global network. Time measurement here is very delicate, because the timing attack here relies on measuring a single `strcmp` iteration, which is just running a few extra machines opcodes:
 
 ![2](images/2.png)
 
@@ -310,7 +310,7 @@ The second reason (this is only my speculation, but I think its true) is that th
 
 The third - (also my speculation) is that the timer will not start until we give the program `'\n'` - this lets us a little control over when the timer starts, and that we can send `\nagent\npassword` to the program, and we know that the time measured by `get_time` doesn't rely on our  time latency global network. 
 
-The fourth - we can try a few wrong passwords before time runs out. measuring  the `strcmp` extra time for a single iteration one time -  is impossible, due to the many other things effecting the time measurement (like reading from the UART). We will have to run the test on the same `character` we are testing many times, to see a real time difference.
+The fourth - we can try a few wrong passwords before time runs out. measuring  the `strcmp` extra time for a single iteration one time -  is impossible, due to the many other things effecting the time measurement (like reading from the UART). We will have to run the test on the same character we are testing many times, to see a real time difference.
 
 So lets see some code!
 
@@ -451,7 +451,7 @@ time: 11 seconds
 
 ## Part 2
 
-In my opinion, this is really the hard part. Me and my team couldn't solve it, almost right to the end of the CTF!
+In my opinion, this is really the hard part. Me and my team couldn't solve it, untill the last 10 minutes of the CTF! sadly, we solved it 9 minutes after the CTF was over :(
 
 This is the rest of the `main` function:
 
