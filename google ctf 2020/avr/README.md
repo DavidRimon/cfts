@@ -553,10 +553,8 @@ But how will it be possible? the `timer_on_off(0)` stops the timer. setting `TCC
 Or not?
 
 For this part, we will have to read the 
+datasheet of the chip. http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf
 
-[datasheet]: http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf	"datasheet"
-
-of the chip.
 
 Page 11:
 
