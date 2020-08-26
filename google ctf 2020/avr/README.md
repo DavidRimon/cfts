@@ -10,7 +10,7 @@ The challenge is about breaking the security of a system running on Atmega328p c
 
 The challenge begins with the following message:
 
-![1](images\1.png)
+![1](images/1.png)
 
 
 
