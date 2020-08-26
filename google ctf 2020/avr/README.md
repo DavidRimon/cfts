@@ -10,7 +10,7 @@ The challenge is about breaking the security of a system running on Atmega328p c
 
 The challenge begins with the following message:
 
-![image-20200825234430897](C:\Users\David\AppData\Roaming\Typora\typora-user-images\image-20200825234430897.png)
+![1](images\1.png)
 
 
 
@@ -302,7 +302,7 @@ We can measure this thanks for a few reasons.
 
 First, the developers are printing the current time on every loop iteration - and this time is measure locally on the processor, so you don't need to measure it your self, across time-unreliable global network. Time measurement here is very delicate, because the timing attack here relies on measuring a single `strcmp` iteration, which is just running a few extra machines opcodes:
 
-![image-20200826003656041](C:\Users\David\AppData\Roaming\Typora\typora-user-images\image-20200826003656041.png)
+![2](images\2.png)
 
 As you can see, every `strcmp` iteration is made of  just a few machine codes. We will have to be very exact on our attack. 
 
@@ -551,7 +551,7 @@ of the chip.
 
 Page 11:
 
-![image-20200826031312601](C:\Users\David\AppData\Roaming\Typora\typora-user-images\image-20200826031312601.png)
+![3](images\3.png)
 
 As it says here, `cli` and `sei` are used to disable and enable interrutps.
 
@@ -561,7 +561,7 @@ But here is where things get intrestting.
 
 Page 15:
 
-![image-20200826031634457](C:\Users\David\AppData\Roaming\Typora\typora-user-images\image-20200826031634457.png)
+![4](images\4.png)
 
 
 
@@ -573,11 +573,11 @@ And this is the crown jewel.
 
 This is the disassembly if the `timer_on_off` section
 
-![image-20200826032123770](C:\Users\David\AppData\Roaming\Typora\typora-user-images\image-20200826032123770.png)
+![5](images\5.png)
 
 Page 16:
 
-![image-20200826031924590](C:\Users\David\AppData\Roaming\Typora\typora-user-images\image-20200826031924590.png)
+![6](images\6.png)
 
 **note:** I don't know how, but apparently on this challenge it will be **two** instructions after `sei`.
 
