@@ -202,8 +202,8 @@ ISR(TIMER1_OVF_vect) {
 First, you need to understand how timers work on AVR, see these links:
 
 https://exploreembedded.com/wiki/AVR_Timer_programming
+http://maxembedded.com/2011/06/introduction-to-avr-timers/
 
-[http://maxembedded.com/2011/06/introduction-to-avr-timers/#:~:text=Timers%20as%20registers&text=In%20AVR%2C%20timers%20are%20of,width%20is%20of%2016%20bits.&text=Similarly%20a%2016%20bit%20timer,steps%20from%200%20to%2065535.](http://maxembedded.com/2011/06/introduction-to-avr-timers/#:~:text=Timers as registers&text=In AVR%2C timers are of,width is of 16 bits.&text=Similarly a 16 bit timer,steps from 0 to 65535.)
 
 
 
