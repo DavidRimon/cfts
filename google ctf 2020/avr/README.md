@@ -1,6 +1,8 @@
 # Google CTF 2020 AVR writeup
 ![AVR Freaks](images/Atmel_Freaks_logo_large.png)
 
+By: David Rimon & Roy Hoffman @Shablul team.
+
 ## Part 1
 
 This is a writeup for the hardware AVR challenge in Google CTF 2020.
@@ -526,7 +528,7 @@ The flag is contained inside the `top_secret_data` variable.
 
 calling `timer_on_off` when `logged_in=1` , will go the `else` clause. There, one character will be copied to from `top_secret_data` to `secret`, and then there is a call for `timer_on_off`. What happens here, is that the timer will be set again (because the parameter !=0), and the else clause will be called again, and then another character will  be copied from `top_secret_data` to `secret`, until we reach `NULL` in `top_secret_data`, then the timer will go off.
 
-That means, that causing the timer interrupt once after we are logged in - will pass the flag from `top_secret_data` to `secret`. The only was to do that though, is threw case 3. And this time, we can't use timing attack - because here the password check  time doesn't depend on input length. 
+That means, that causing the timer interrupt once after we are logged in - will pass the flag from `top_secret_data` to `secret`. The only way to do that though, is through case 3. And this time, we can't use timing attack - because here the password check  time doesn't depend on input length. 
 
 What will we do?
 
